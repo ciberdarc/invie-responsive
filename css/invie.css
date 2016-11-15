@@ -1,3 +1,42 @@
-body{
-	background: peru;
+/*Selector universal*/
+* {
+	border: 1px solid red;
+	margin: 10px;
 }
+/*Selector de etiqueta*/
+header{
+	background: blue;
+}
+
+section {
+	background: purple;
+}
+
+/*selecto de descente*/
+
+article h3 {
+	color: green;
+}
+
+/*selecto de clases*/
+.title-a{
+	background: yellow;
+}
+
+.title-b{
+	background: salmon;
+}
+
+/*selecto de id*/
+#header{
+	border: 3px solid black;
+}
+
+#portada {
+	border: 3px solid orange;
+}
+
+#guitarras{
+	border: 3px solid brown;
+}
+
