@@ -7,8 +7,10 @@ body {
   font-family: 'Allerta', sans-serif;
 }
 
-.menu{
+.menu ,
+.menu li{
   font-size: 24px;
+  display: inline-block;
 }
 
 .titulo{
@@ -37,6 +39,10 @@ body {
  .portada {
   background-image: url('../images/background.png');
   color: white;
+ }
+
+ .logotipo{
+  display: inline-block;
  }
 
 
