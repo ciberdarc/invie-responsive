@@ -3,6 +3,14 @@
 /*font-family: 'Allerta', sans-serif;
 font-family: 'Montserrat', sans-serif;*/
 
+*{
+ /* width: ;
+  height: ;*/
+ padding: 10px;
+ margin: 10px;
+  border: 2px solid red;
+}
+
 body {
   font-family: 'Allerta', sans-serif;
 }
