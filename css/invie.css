@@ -1,9 +1,18 @@
 /*Selector universal*/
+
+/*font-family: 'Allerta', sans-serif;
+font-family: 'Montserrat', sans-serif;*/
+
+body {
+  font-family: 'Allerta', sans-serif;
+}
+
 .menu{
   font-size: 24px;
 }
 
 .titulo{
+  font-family: 'Montserrat', sans-serif;
   font-size: 70px;
 }
 
@@ -21,6 +30,7 @@
 }
 
 .guitarras h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
 }
 
