@@ -14,7 +14,7 @@
 
   <body>
 
-    <header id="header" class="header"> <!-- header -->
+    <header id="header" class="header contenedor"> <!-- header -->
       <figure class="logotipo"> <!-- logotipo -->
         <img src="images/invie.png" width="186" height="60" alt="Invie Logotipo">
       </figure>
@@ -35,31 +35,37 @@
     </header>
 
     <section id="portada" class="portada"><!-- portada -->
-      <h1 class="titulo">Guitarras inviesibles</h1><!-- titulo -->
-      <h3 class="title-a">Se la estrella de rock que siempre quisiste ser</h3><!-- resumen -->
-      <button>Conoce mas</button><!-- boton -->
+      <div class="contenedor">
+        <h1 class="titulo">Guitarras inviesibles</h1><!-- titulo -->
+        <h3 class="title-a">Se la estrella de rock que siempre quisiste ser</h3><!-- resumen -->
+        <button>Conoce mas</button><!-- boton -->
+      </div>
     </section>
 
-    <section id="guitarras" class="guitarras"><!-- guitarras -->
+    <section id="guitarras" class="guitarras contenedor"><!-- guitarras -->
       <h2>Nuestras guitarras</h2><!-- titulo -->
-      <article class="guitarra">
-        <img src="images/invie-acustica.png" width="200" alt="Guitarra Invie Acustica">
-        <h3 class="title-b">Invie Acustica</h3>
-        <ol>
-          <li>Estilo vintage</li>
-          <li>Madera pura</li>
-          <li>Incluye estuche invisible de aluminio</li>
-        </ol>
+      <article class="guitarra ">
+        <img width="350" class="derecha" src="images/invie-acustica.png" alt="Guitarra Invie Acustica">
+        <div class="contenedor-guitarra-a">
+          <h3 class="title-b">Invie Acustica</h3>
+          <ol>
+            <li>Estilo vintage</li>
+            <li>Madera pura</li>
+            <li>Incluye estuche invisible de aluminio</li>
+          </ol>
+        </div>
       </article>
 
-      <article class="guitarra">
-        <img src="images/invie-classic.png" width="200" alt="Guitarra Invie Classic">
-        <h3 class="title-b">Invie Classic</h3>
-        <ol>
-          <li>Estilo vintage</li>
-          <li>Liviana</li>
-          <li>Inicia tu camino como rockstar</li>
-        </ol>
+      <article class="guitarra ">
+        <img width="350" class="izquierda" src="images/invie-classic.png" alt="Guitarra Invie Classic">
+        <div class="contenedor-guitarra-b">
+          <h3 class="title-b">Invie Classic</h3>
+          <ol>
+            <li>Estilo vintage</li>
+            <li>Liviana</li>
+            <li>Inicia tu camino como rockstar</li>
+          </ol>
+        </div>
       </article>
     </section>
 
