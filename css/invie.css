@@ -9,12 +9,57 @@ body {
   margin: 0;
 }
 
+table{
+  width: 100%;
+}
+
+th {
+  background: #273b47;
+  color: white;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+
+td{
+  padding: 20px;
+}
+
+table, td, th{
+  border: 1px solid #273b47;
+  border-collapse: collapse;
+}
+
+input, textarea{
+  outline: 0;
+}
+
+input:focus, textarea:focus{
+  background: #d3d3d3;
+}
+
+.background{
+  background-image: url('../images/background.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.contenedor {
+  width: 800px;
+  margin: auto;
+  position: relative;
+}
+
 .button{
-  border-radius: 5px;
+  border-radius: 12px;
   border: none;
   background: #fd324e;
   color: white;
-  padding: 7px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  background: linear-gradient(to left, #fe344e, #ff7250);
 }
 
 .menu{
@@ -28,11 +73,27 @@ body {
   display: inline-block;
 }
 
+.menu li:before{
+  content: '∘';
+  font-size: 40px;
+  line-height: 20px;
+  color: white;
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+}
+
 .titulo{
   font-family: 'Montserrat', sans-serif;
   font-size: 70px;
   margin-bottom: 0;
   margin-top: 70px;
+}
+
+.titulo span{
+  text-decoration: underline;
 }
 
 
@@ -48,6 +109,7 @@ body {
 
 .guitarras{
   color: #1f313c;
+  margin-bottom: 60px;
 }
 
 .guitarras h2 {
@@ -56,11 +118,9 @@ body {
 }
 
  .portada {
-  background-image: url('../images/background.png');
-  background-position: center;
-  background-size: cover;
   color: white;
   padding: 20px;
+  height: 500px;
  }
 
  .portada button{
@@ -73,12 +133,8 @@ body {
 
  .logotipo{
   display: inline-block;
+  margin-left: 0;
  }
-
-.contenedor {
-  width: 800px;
-  margin: auto;
-}
 
 .derecha {
   float: right;
@@ -89,15 +145,19 @@ body {
 .izquierda{
   float: left;
   position: relative;
-  top: 80px;
 }
 
 .guitarra {
-  margin: 10px;
+  margin: 10px 10px 40px 10px;
   padding: 10px;
   border: 1px solid #1f313c;
   border-radius: 8px;
 }
+
+.guitarra.b{
+  height: 190px;
+}
+
 
 .contenedor-guitarra-a{
   padding-left: 20px;
@@ -105,6 +165,8 @@ body {
 
 .contenedor-guitarra-b{
   margin-left: 370px;
+  position: relative;
+  bottom: 90px;
 }
 
 .header{
@@ -113,6 +175,7 @@ body {
 
 .footer{
   background: #273b47;
+  padding: 50px 10px;
 }
 
 .contacto{
@@ -145,7 +208,6 @@ body {
   display: flex;
   width: 400px;
   color: white;
-  padding: 50px 10px;
 }
 
 .col1, .col2{
@@ -161,6 +223,10 @@ body {
   align-items: flex-start;
 }
 
+.col2 .button{
+  margin-top: 15px;
+}
+
 .intereses label {
   font-size: 12px;
 }
@@ -173,23 +239,6 @@ body {
   margin-top: 10px;
 }
 
-table{
-  width: 100%;
-}
-
-th {
-  background: #273b47;
-  color: white;
-  padding: 10px 20px;
-  text-align: left;
-}
-
-
-td{
-  padding: 20px;
-}
-
-table, td, th{
-  border: 1px solid #273b47;
-  border-collapse: collapse;
+.tabla{
+  margin: 50px 0;
 }
