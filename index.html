@@ -38,7 +38,7 @@
       <div class="contenedor">
         <h1 class="titulo">Guitarras inviesibles</h1><!-- titulo -->
         <h3 class="title-a">Se la estrella de rock que siempre quisiste ser</h3><!-- resumen -->
-        <button>Conoce mas</button><!-- boton -->
+        <button class="button">Conoce mas</button><!-- boton -->
       </div>
     </section>
 
@@ -76,39 +76,39 @@
         <a href="mailto:ala1289@gmail.com"><strong>E-mail</strong><span>ala1289@gmail.com</span></a>
       </div>
       <form class="formulario">
-        <label for="nombre">Nombre</label>
-        <input type="text" required id="nombre" name="nombre">
-        <label for="email">Email</label>
-        <input type="email" required placeholder="pon tu email" id="email" name="email">
-        
-        <div class="sexo">
-            <label for="mujer">
-              <input type="radio" id="mujer" name="sexo" value="mujer"> mujer
+        <div class="col1">
+          <label for="nombre">Nombre</label>
+          <input type="text" required id="nombre" name="nombre">
+          <label for="email">Email</label>
+          <input type="email" required placeholder="pon tu email" id="email" name="email">
+          <div class="sexo">
+              <label for="mujer">
+                <input type="radio" checked id="mujer" name="sexo" value="mujer"> mujer
+              </label>
+              <label for="hombre">
+                <input type="radio" id="hombre" name="sexo" value="hombre"> hombre
+              </label>          
+          </div>
+          <div class="intereses">
+            <label for="cotizacion">
+              <input type="checkbox" checked id="cotizacion" name="intereses" value="cotizacion"> Cotización
             </label>
-            <label for="hombre">
-              <input type="radio" id="hombre" name="sexo" value="hombre"> hombre
-            </label>          
+            <label for="reclamos">
+              <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
+            </label>
+            <label for="comentarios">
+              <input type="checkbox" id="comentarios" name="intereses" value="comentarios"> Comentarios
+            </label>
+            <label for="otros">
+              <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
+            </label>
+          </div>
         </div>
-        
-        <div class="intereses">
-        <label for="cotizacion">
-          <input type="checkbox" id="cotizacion" name="intereses" value="cotizacion"> Cotización
-        </label>
-        <label for="reclamos">
-          <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
-        </label>
-        <label for="comentarios">
-          <input type="checkbox" id="comentarios" name="intereses" value="comentarios"> Comentarios
-        </label>
-        <label for="otros">
-          <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
-        </label>
-        </div>
-        
-        <div>
+        <div class="col2">
           <label for="comentarios">Comentarios</label>
           <textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
-          <input type="submit" id="" name="" value="Enviar">
+          <input type="submit" id="" name="" value="Enviar" class="button">
+        </div>
         </div>
       </form>
     </footer>
