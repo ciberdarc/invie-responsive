@@ -113,14 +113,28 @@
       </div>
     </footer>
     <script type="text/javascript">
-      var $burgerButton = document.getElementById('burger-button')
-      var $menu = document.getElementById('menu')
-      $burgerButton.addEventListener('touchstart', toggleMenu)
+    var consulta = window.matchMedia('(max-width: 500px)')
+    consulta.addListener(mediaQuery)
 
-      function toggleMenu() {
-        $menu.classList.toggle('active')
+    var $burgerButton = document.getElementById('burger-button')
+    var $menu = document.getElementById('menu')
+    function toggleMenu() {
+      $menu.classList.toggle('active')
+      $burgerButton.classList.toggle('icon-close')
+    }
+
+    function mediaQuery() {
+      if (consulta.matches) {
+        console.log('si');
+        $burgerButton.addEventListener('touchstart', toggleMenu)
+
+      }else {
+        console.log('no');
+          $burgerButton.removeEventListener('touchstart', toggleMenu)
       }
-      // $menu.classList.toggle('active')
+    }
+    mediaQuery()
+
     </script>
   </body>
 </html>
