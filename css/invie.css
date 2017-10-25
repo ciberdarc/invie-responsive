@@ -422,7 +422,7 @@ input:focus, textarea:focus{
   align-items: center;
   transition: .3s;
 }
-.menu .active{
+.menu.active{
   left: 0;
 }
 .menu ul {

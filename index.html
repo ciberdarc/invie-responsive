@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="css/invie.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
     <!-- <link rel="stylesheet" media="(max-width:800px)" href="css/media-querie.css"> -->
   <title>Invie - tus mejores guitarras!!</title>
@@ -114,9 +115,11 @@
     <script type="text/javascript">
       var $burgerButton = document.getElementById('burger-button')
       var $menu = document.getElementById('menu')
-      $burgerButton.addEventListener('touchstart', function functionName() {
+      $burgerButton.addEventListener('touchstart', toggleMenu)
+
+      function toggleMenu() {
         $menu.classList.toggle('active')
-      })
+      }
       // $menu.classList.toggle('active')
     </script>
   </body>
