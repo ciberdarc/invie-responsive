@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?b7rda4');
+  src:  url('../fonts/icomoon.eot?b7rda4#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?b7rda4') format('truetype'),
+    url('../fonts/icomoon.woff?b7rda4') format('woff'),
+    url('../fonts/icomoon.svg?b7rda4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-close:before {
+  content: "\ea0d";
+}
+
+
 /*Selector universal*/
 
 /*font-family: 'Allerta', sans-serif;
@@ -243,6 +283,22 @@ input:focus, textarea:focus{
   margin: 50px 0;
 }
 
+.burger-button {
+  width: 40px;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #395466;
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  text-align: center;
+  top: 20px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/*/Inicio de media queries/*/
 @media screen and (max-width: 800px){
   /*trabajamos sobre portada*/
   .titulo {
@@ -350,6 +406,28 @@ input:focus, textarea:focus{
 
 @media screen and (max-width: 500px) {
   /*/Portada/*/
+  .portada .contenedor{
+    position: static;
+  }
+.menu{
+  background: rgba(255, 60, 88, .8);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: .3s;
+}
+.menu .active{
+  left: 0;
+}
+.menu ul {
+  flex: 1;
+}
   .portada{
     text-align: center;
   }
