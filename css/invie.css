@@ -80,8 +80,8 @@ input:focus, textarea:focus{
 
 .background{
   background-image: url('../images/background.png');
-  background-position: center;
   background-size: cover;
+  background-color: #466173;
 }
 
 .contenedor {
@@ -473,4 +473,10 @@ input:focus, textarea:focus{
      left:0;
      height: 100%;
      width: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .background{
+    background-image: url('../images/background2x.png')
+  }
 }

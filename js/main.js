@@ -12,12 +12,12 @@ function toggleMenu () {
 function mediaQuery () {
   if (consulta.matches) {
     console.log('si')
-    window.onload = function () {
-      $burgerButton.addEventListener('touchstart', toggleMenu)
-    }
+    $burgerButton.addEventListener('touchstart', toggleMenu)
+    console.log(window.devicePixelRatio)
   } else {
     console.log('no')
     $burgerButton.removeEventListener('touchstart', toggleMenu)
+    console.log(window.devicePixelRatio)
   }
 }
 mediaQuery()

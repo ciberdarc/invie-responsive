@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="css/invie.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="css/invie.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <title>Invie - tus mejores guitarras!!</title>
 </head>
 
-  <body>
-    <section id="portada" class="portada background"><!-- portada -->
-      <header id="header" class="header contenedor"> <!-- header -->
-      <figure class="logotipo"> <!-- logotipo -->
-        <img src="images/invie.png" width="186" height="60" alt="Invie Logotipo">
+<body>
+  <section id="portada" class="portada background">
+    <!-- portada -->
+    <header id="header" class="header contenedor">
+      <!-- header -->
+      <figure class="logotipo">
+        <!-- logotipo -->
+        <!-- <img src="images/invie.png" srcset="images/invie.png 1x, images/invie2x.png 2x" width="186" height="60" alt="Invie Logotipo"> -->
+        <img class="b-lazy"  data-src="images/invie.png|images/invie2x.png" width="186" height="60" alt="Invie Logotipo">
       </figure>
       <span class="burger-button icon-menu" id="burger-button"></span>
       <!-- menu -->
@@ -31,48 +36,51 @@
           </li>
         </ul>
       </nav>
-      </header>
-      <div class="contenedor">
-        <h1 class="titulo">Guitarras <span>invie</span>sibles</h1><!-- titulo -->
-        <h3 class="title-a">Se la estrella de rock que siempre quisiste ser</h3><!-- resumen -->
-        <a class="button" href="#guitarras">Conoce mas</a><!-- boton -->
-      </div>
-    </section>
+    </header>
+    <div class="contenedor">
+      <h1 class="titulo">Guitarras <span>invie</span>sibles</h1>
+      <!-- titulo -->
+      <h3 class="title-a">Se la estrella de rock que siempre quisiste ser</h3>
+      <!-- resumen -->
+      <a class="button" href="#guitarras">Conoce mas</a>
+      <!-- boton -->
+    </div>
+  </section>
 
-    <section id="guitarras" class="guitarras contenedor">
-      <h2>Nuestras guitarras</h2>
-      <div class="contenedor-iframe">
-           <iframe class ="iframe" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameborder="0" allowfullscreen></iframe>
+  <section id="guitarras" class="guitarras contenedor">
+    <h2>Nuestras guitarras</h2>
+    <div class="contenedor-iframe">
+      <iframe class="iframe" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <article class="guitarra ">
+      <img width="350" class="derecha b-lazy" data-src="images/invie-acustica.png|images/invie-acustica2x.png" alt="Guitarra Invie Acustica">
+      <div class="contenedor-guitarra-a">
+        <h3 class="title-b">Invie Acustica</h3>
+        <ol>
+          <li>Estilo vintage</li>
+          <li>Madera pura</li>
+          <li>Incluye estuche invisible de aluminio</li>
+        </ol>
       </div>
-      <article class="guitarra ">
-        <img width="350" class="derecha" data-src="images/invie-acustica.png" alt="Guitarra Invie Acustica">
-        <div class="contenedor-guitarra-a">
-          <h3 class="title-b">Invie Acustica</h3>
-          <ol>
-            <li>Estilo vintage</li>
-            <li>Madera pura</li>
-            <li>Incluye estuche invisible de aluminio</li>
-          </ol>
-        </div>
-      </article>
+    </article>
 
-      <article class="guitarra b">
-        <img width="350" class="izquierda" data-src="images/invie-classic.png" alt="Guitarra Invie Classic">
-        <div class="contenedor-guitarra-b">
-          <h3 class="title-b">Invie Classic</h3>
-          <ol>
-            <li>Estilo vintage</li>
-            <li>Liviana</li>
-            <li>Inicia tu camino como rockstar</li>
-          </ol>
-        </div>
-      </article>
-    </section>
+    <article class="guitarra b">
+      <img width="350" class="izquierda b-lazy" data-src="images/invie-classic.png|images/invie-classic2x.png" alt="Guitarra Invie Classic">
+      <div class="contenedor-guitarra-b">
+        <h3 class="title-b">Invie Classic</h3>
+        <ol>
+          <li>Estilo vintage</li>
+          <li>Liviana</li>
+          <li>Inicia tu camino como rockstar</li>
+        </ol>
+      </div>
+    </article>
+  </section>
 
   <footer class="footer">
     <div class="contenedor">
       <div class="contacto">
-        <img   data-src="images/invie-white.png"  alt="logotipo blanco">
+        <img class="b-lazy" data-src="images/invie-white.png|images/invie-white2x.png" alt="logotipo blanco">
         <a href="tel:+527223228383"><strong>Telefono</strong><span>7223228383</span></a>
         <a href="mailto:ala1289@gmail.com"><strong>E-mail</strong><span>ala1289@gmail.com</span></a>
       </div>
@@ -83,10 +91,10 @@
           <label for="email">Email</label>
           <input type="email" required placeholder="pon tu email" id="email" name="email">
           <div class="sexo">
-              <label for="mujer">
+            <label for="mujer">
                 <input type="radio" checked id="mujer" name="sexo" value="mujer"> mujer
               </label>
-              <label for="hombre">
+            <label for="hombre">
                 <input type="radio" id="hombre" name="sexo" value="hombre"> hombre
               </label>
           </div>
@@ -111,15 +119,15 @@
           <input type="submit" id="submit" name="submit" value="Enviar" class="button">
         </div>
       </form>
-      </div>
-    </footer>
-    <script type="text/javascript" src="js/blazy.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript">
-        var bLazy = new Blazy({
-    // options
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/blazy.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript">
+    var bLazy = new Blazy({
       selector: 'img'
-        });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
