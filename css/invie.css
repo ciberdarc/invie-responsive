@@ -296,10 +296,21 @@ input:focus, textarea:focus{
   top: 20px;
   cursor: pointer;
   z-index: 3;
+  color: white;
 }
 
 /*/Inicio de media queries/*/
 @media screen and (max-width: 800px){
+/*trabajamos sobre tabla precios*/
+.tabla {
+  margin: 50px 20px;
+}
+
+.tabla .contenedor{
+  overflow: auto;
+  border: 1px solid #273b47;
+}
+
   /*trabajamos sobre portada*/
   .titulo {
     font-size: 45px;
@@ -407,6 +418,14 @@ input:focus, textarea:focus{
 @media screen and (max-width: 500px) {
   /*/Portada/*/
   .portada .contenedor{
+    position: static;
+  }
+
+  .header {
+    position: static;
+  }
+
+  .header .contenedor {
     position: static;
   }
 .menu{
