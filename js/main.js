@@ -9,6 +9,16 @@ function toggleMenu () {
   $burgerButton.classList.toggle('icon-close')
 }
 
+function showMenu () {
+  $menu.classList.toggle('active')
+  $burgerButton.classList.add('icon-close')
+}
+
+function hideMenu () {
+  $menu.classList.toggle('active')
+  $burgerButton.classList.remove('icon-close')
+}
+
 function mediaQuery () {
   if (consulta.matches) {
     console.log('si')
@@ -21,3 +31,9 @@ function mediaQuery () {
   }
 }
 mediaQuery()
+
+// Gestos touchs
+var $body = document.body
+var gestos = new Hammer($body)
+gestos.on('swipeleft', hideMenu)
+gestos.on('swiperight', showMenu)
