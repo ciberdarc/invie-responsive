@@ -371,26 +371,42 @@ input:focus, textarea:focus{
   /*guitarras*/
 }
 
-@media screen and (max-width: 765px){
+@media screen and (max-width: 767px){
   /*/Footer/*/
   .footer .contenedor{
     display: block;
   }
+  .contacto a{
+    display: block;
+  }
   .contacto{
     margin: 0 auto;
+    display: block;
   }
   .formulario{
     display: block;
     margin: 0 auto;
     width: 300px;
   }
+
+  .formulario label {
+    font-size: 20px;
+  }
+
+  .sexo label{
+    display: block;
+  }
   .intereses label{
     display: block;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .col1 {
     margin: 0;
+  }
+
+  input[type="text"]{
+    margin-bottom: 30px;
   }
 
   input[type="text"],
