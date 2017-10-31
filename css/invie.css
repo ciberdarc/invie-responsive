@@ -290,13 +290,26 @@ input:focus, textarea:focus{
   border-radius: 50%;
   background: #395466;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   left: 20px;
   text-align: center;
   top: 20px;
   cursor: pointer;
   z-index: 3;
   color: white;
+  display: none;
+}
+
+.video-demo{
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid #3c5b63;
+}
+
+.video-demo-contenedor{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 123px;
 }
 
 /*/Inicio de media queries/*/
@@ -351,6 +364,9 @@ input:focus, textarea:focus{
   }
   .contenedor-guitarra-a{
     padding: 0;
+  }
+  .video-demo-contenedor{
+    margin: 0;
   }
   /*guitarras*/
 }
@@ -413,10 +429,23 @@ input:focus, textarea:focus{
   .menu ul{
     padding: 0;
   }
+
+
+
 }
 
 @media screen and (max-width: 500px) {
   /*/Portada/*/
+  .portada .button{
+      display: block;
+  }
+
+  .precios .header .logotipo{
+    margin: 50px 0;
+  }
+  .burger-button {
+    display: block;
+  }
   .portada .contenedor{
     position: static;
   }
@@ -430,7 +459,7 @@ input:focus, textarea:focus{
   }
 .menu{
   background: rgba(255, 60, 88, .8);
-  position: absolute;
+  position: fixed;
   left: -100%;
   top: 0;
   z-index: 2;
@@ -477,7 +506,16 @@ input:focus, textarea:focus{
   .title-b{
     font-size: 30px;
   }
+
+  .video-demo-contenedor{
+    margin: 0 10px 10px 10px;
+  }
   /*/Guitarras/*/
+}
+
+/*footer*/
+.col2 {
+  align-items: stretch;
 }
 
 .contenedor-iframe{
