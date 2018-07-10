@@ -13,9 +13,12 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 btnLogin.addEventListener("click", function name(params) {
   event.preventDefault();
-  var provider = new firebase.auth.GoogleAuthProvider();
 
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  var provider = new firebase.auth.FacebookAuthProvider();
+  provider.addScope('public_profile');
+  // var provider = new firebase.auth.GoogleAuthProvider();
+  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
   firebase.auth().signInWithPopup(provider).then(function(datosusuario) {
   btnLogout.innerHTML = "Cerrar sesión";
   }).catch(function(){
