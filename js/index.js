@@ -1,29 +1,36 @@
 var btnLogin = document.getElementById("btnLogin");
-
-
-
+var btnLogout = document.getElementById("btnLogout");
 
 firebase.auth().onAuthStateChanged(function (user) {
-// console.log(user);
-// if (user) {
-//     console.log("tenemos usuario");
-  
-// } else {
-//     console.log("no tenemos usuario");
-  
-// }
+  if (user) {
+    btnLogin.style.display = 'none';
+    btnLogout.style.display = 'inline-block';
+  }else {
+    btnLogin.style.display = 'inline-block';
+    btnLogout.style.display = 'none';
+  }
 });
 
 btnLogin.addEventListener("click", function name(params) {
   event.preventDefault();
   var provider = new firebase.auth.GoogleAuthProvider();
 
-  console.log("funciona btn");
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   firebase.auth().signInWithPopup(provider).then(function(datosusuario) {
-    console.log(datosusuario);
-    
-  }).catch(function(err) {
+  btnLogout.innerHTML = "Cerrar sesión";
+  }).catch(function(){
     console.log("error");
+  });
+});
+
+btnLogout.addEventListener("click", function(){
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    btnLogin.innerHTML = "Iniciar sesión";
+    btnLogout.innerHTML = "";
+
+  }).catch(function(error) {
+    // An error happened.
+    console.log(error);
   });
 });

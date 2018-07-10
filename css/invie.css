@@ -114,7 +114,7 @@ input:focus, textarea:focus{
 }
 
 .menu li:before{
-  content: '∘';
+  /* content: '∘'; */
   font-size: 40px;
   line-height: 20px;
   color: white;
