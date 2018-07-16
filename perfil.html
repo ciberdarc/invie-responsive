@@ -5,7 +5,8 @@
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/invie.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   </head>
   <body class="precios">
     <header id="header" class="header background"> <!-- header -->
@@ -13,7 +14,7 @@
         <figure class="logotipo"> <!-- logotipo -->
           <img src="images/invie.png" width="186" height="60" alt="Invie logotipo"/>
         </figure>
-        <span class="burguer-button icon-menu" id="burguer-button"></span>
+        <span class="burger-button icon-menu" id="burger-button"></span>
         <nav class="menu" id="menu"> <!-- menu -->
           <ul>
             <li>
@@ -129,24 +130,25 @@
         </form>
       </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.4/blazy.min.js"></script>
+    <script type="text/javascript" src="js/blazy.min.js"></script>
+    
+    <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/f2bf09f8/cloudflare-static/email-decode.min.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-database.js"></script>
     <script>
-    // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBwxNKZo5vVIMl1xMpkm_w90hNGAQyloOA",
-        authDomain: "platzi-invie-938a7.firebaseapp.com",
-        databaseURL: "https://platzi-invie-938a7.firebaseio.com",
-        projectId: "platzi-invie-938a7",
-        storageBucket: "platzi-invie-938a7.appspot.com",
-        messagingSenderId: "244412200085"
-      };
-      firebase.initializeApp(config);
-    </script> 
-    <script src="js/perfil.js"></script>
+      // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBwxNKZo5vVIMl1xMpkm_w90hNGAQyloOA",
+          authDomain: "platzi-invie-938a7.firebaseapp.com",
+          databaseURL: "https://platzi-invie-938a7.firebaseio.com",
+          projectId: "platzi-invie-938a7",
+          storageBucket: "platzi-invie-938a7.appspot.com",
+          messagingSenderId: "244412200085"
+        };
+        firebase.initializeApp(config);
+      </script>
+    <script type="text/javascript" src="js/perfil.js"></script>
     <script type="text/javascript">
       var bLazy = new Blazy({
         selector: 'img'
