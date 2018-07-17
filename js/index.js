@@ -1,6 +1,9 @@
+var ref = firebase.database().ref("usuario");
+
 var btnLogin = document.getElementById("btnLogin");
 var btnLogout = document.getElementById("btnLogout");
 
+var usuario = {};
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     btnLogin.style.display = 'none';
@@ -21,6 +24,12 @@ btnLogin.addEventListener("click", function name(params) {
 
   firebase.auth().signInWithPopup(provider).then(function(datosusuario) {
   btnLogout.innerHTML = "Cerrar sesión";
+  usuario = {
+    nombre: datosusuario.user.displayName,
+    email: datosusuario.user.email,
+    uid: datosusuario.user.uid
+  };
+  agregarUsuario(usuario, usuario.uid);
   }).catch(function(error){
     console.log("error");
   });
@@ -37,3 +46,7 @@ btnLogout.addEventListener("click", function(){
     console.log(error);
   });
 });
+
+function agregarUsuario(usuario, uid){
+  ref.child(uid).update(usuario);
+}
