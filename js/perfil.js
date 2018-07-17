@@ -4,15 +4,26 @@ var ref = firebase.database().ref("usuario");
 var btnLogin = document.getElementById("btnLogin");
 var btnLogout = document.getElementById("btnLogout");
 
+var datosPerfil = document.getElementById("datosPerfil");
+var formularioPerfil = document.getElementById("formularioPerfil");
+
 var perfilNombre = document.getElementById("perfilNombre");
 var perfilEmail = document.getElementById("perfilEmail");
 
+var btnEditar = document.getElementById("perfilEditar");
+var usuario = {};
 
-leerInformacion();
+var cancelForm = document.getElementById("cancelForm");
+var nombreForm = document.getElementById("nombreForm");
+var emailForm = document.getElementById("emailForm");
+var telefonoForm = document.getElementById("telefonoForm");
+var calleForm = document.getElementById("calleForm");
+var interiorForm = document.getElementById("interiorForm");
+var coloniaForm = document.getElementById("coloniaForm");
+var cpForm = document.getElementById("cpForm");
 
-function leerInformacion() {
-  ref.child("sUq4yWNc3SNJPVCzvYNYsQyIXE52").on('value', function (data) {
-    console.log(data.val());
+function leerInformacion(uid) {
+  ref.child(uid).on('value', function (data) {
     llenarInformacion(data.val().nombre, data.val().email);
   });
 }
@@ -23,7 +34,6 @@ function llenarInformacion(nombre, email) {
   perfilEmail.innerHTML = email;
 }
 
-leerInformacion();
 //Para la seccion de uso de base de datos
 // var btnPush = document.getElementById("btnPush");
 // var btnSet = document.getElementById("btnSet");
@@ -83,6 +93,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     btnLogin.style.display = 'none';
     btnLogout.style.display = 'inline-block';
+    leerInformacion(user.uid);
   }else {
     
     btnLogin.style.display = 'inline-block';
@@ -128,4 +139,20 @@ btnLogout.addEventListener("click", function(){
 
 function agregarUsuario(usuario, uid){
   ref.child(uid).update(usuario);
+}
+
+btnEditar.addEventListener("click", function() {
+  datosPerfil.style.display = 'none';
+  formularioPerfil.style.display = 'block';
+});
+
+cancelForm.addEventListener("click", function() {
+  datosPerfil.style.display = 'block';
+  formularioPerfil.style.display = 'none';
+});
+
+function editarDatos() {
+  event.preventDefault();
+  console.log("editar datos");
+  
 }

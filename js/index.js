@@ -14,9 +14,8 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
-btnLogin.addEventListener("click", function name(params) {
+btnLogin.addEventListener("click", function () {
   event.preventDefault();
-
   var provider = new firebase.auth.FacebookAuthProvider();
   provider.addScope('public_profile');
   // var provider = new firebase.auth.GoogleAuthProvider();
