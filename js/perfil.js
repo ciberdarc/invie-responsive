@@ -6,6 +6,8 @@ var btnLogout = document.getElementById("btnLogout");
 
 var datosPerfil = document.getElementById("datosPerfil");
 var formularioPerfil = document.getElementById("formularioPerfil");
+var perfilTelefono = document.getElementById("perfilTelefono");
+var perfilDireccion = document.getElementById("perfilDireccion");
 
 var perfilNombre = document.getElementById("perfilNombre");
 var perfilEmail = document.getElementById("perfilEmail");
@@ -24,14 +26,17 @@ var cpForm = document.getElementById("cpForm");
 
 function leerInformacion(uid) {
   ref.child(uid).on('value', function (data) {
-    llenarInformacion(data.val().nombre, data.val().email);
+    var dat = data.val();
+    llenarInformacion(dat.nombre, dat.email, dat.telefono, dat.direccion);
   });
 }
 
-function llenarInformacion(nombre, email) {
-  console.log(nombre, email);
+function llenarInformacion(nombre, email, telefono, direccion) {
+  console.log(nombre, email, telefono);
   perfilNombre.innerHTML = nombre;
   perfilEmail.innerHTML = email;
+  perfilTelefono.innerHTML = telefono;
+  perfilDireccion.innerHTML = direccion.calle + " " +direccion.interior + ", " + direccion.colonia + " " +direccion.cp;
 }
 
 //Para la seccion de uso de base de datos
@@ -153,6 +158,22 @@ cancelForm.addEventListener("click", function() {
 
 function editarDatos() {
   event.preventDefault();
+  var uid = firebase.auth().currentUser.uid;
   console.log("editar datos");
-  
+  var obj = {
+    nombre: nombreForm.value,
+    email: emailForm.value,
+    telefono: telefonoForm.value,
+    direccion: {
+      calle: calleForm.value,
+      interior: interiorForm.value,
+      colonia: coloniaForm.value,
+      cp: cpForm.value
+    }
+  };
+  console.log(obj);
+  ref.child(uid).update(obj).then(function () {
+    datosPerfil.style.display = 'block';
+    formularioPerfil.style.display = 'none';
+  });
 }
