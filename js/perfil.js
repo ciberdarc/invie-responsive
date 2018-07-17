@@ -8,6 +8,28 @@ var btnLogout = document.getElementById("btnLogout");
 var btnPush = document.getElementById("btnPush");
 var btnSet = document.getElementById("btnSet");
 var btnUpdate = document.getElementById("btnUpdate");
+var btnRemove = document.getElementById("btnRemove");
+
+btnRemove.addEventListener("click", function() {
+  ref.child("sUq4yWNc3SNJPVCzvYNYsQyIXE52").remove().then(function() {
+    alert("remove");
+  }).catch(function(err) {
+    console.log(err);
+    alert("fallo el remove");
+  });
+});
+
+btnSet.addEventListener("click", function() {
+  var obj = {
+    lugarPlatziConf: "Cdmx"
+  };
+  refTest.set(obj).then(function() {
+    alert("set");
+  }).catch(function(err) {
+    console.log(err);
+    alert("fallo el set");
+  });
+});
 
 btnPush.addEventListener("click", function () {
   var objeto = {
@@ -27,13 +49,14 @@ btnPush.addEventListener("click", function () {
 
 btnUpdate.addEventListener("click", function() {
   var obj = {
-    curso: "desarrollo web",
-    profesor: "Leonidas",
-    contenidos:{
-      primero: "formulario"
-    }
+    lugar: "platzi"
   };
-  refTest.child("-LHc2hquB_l-921M7isy").update(obj);
+  refTest.update(obj).then(function() {
+    alert("se actualizo correctament la informaion");
+  }).catch(function (err) {
+    console.log(err);
+    alert("hubo un error");
+  });
 });
 
 
@@ -65,7 +88,7 @@ btnLogin.addEventListener("click", function name(params) {
     email: datosusuario.user.email,
     uid: datosusuario.user.uid
   };
-  agregarUsuario(usuario);
+  agregarUsuario(usuario, usuario.uid);
   }).catch(function(error){
     console.log("error");
   });
@@ -83,6 +106,6 @@ btnLogout.addEventListener("click", function(){
   });
 });
 
-function agregarUsuario(usuario){
-  ref.push(usuario);
+function agregarUsuario(usuario, uid){
+  ref.child(uid).update(usuario);
 }
