@@ -1,8 +1,43 @@
+var refTest = firebase.database().ref("test");
+var ref = firebase.database().ref("usuario");
+
 var btnLogin = document.getElementById("btnLogin");
 var btnLogout = document.getElementById("btnLogout");
-var ref = firebase.database().ref("usuario");
-var usuario = {};
 
+
+var btnPush = document.getElementById("btnPush");
+var btnSet = document.getElementById("btnSet");
+var btnUpdate = document.getElementById("btnUpdate");
+
+btnPush.addEventListener("click", function () {
+  var objeto = {
+    curso: "firebase",
+    profesor: "angel",
+    contenidos:{
+      primero: "autenticacion"
+    }
+  };
+  refTest.push(objeto).then(function() {
+    alert("se subio correctamente la informacion");
+  }).catch(function(err) {
+    console.log(err);
+    alert("hubo un error");
+  });
+});
+
+btnUpdate.addEventListener("click", function() {
+  var obj = {
+    curso: "desarrollo web",
+    profesor: "Leonidas",
+    contenidos:{
+      primero: "formulario"
+    }
+  };
+  refTest.child("-LHc2hquB_l-921M7isy").update(obj);
+});
+
+
+var usuario = {};
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     btnLogin.style.display = 'none';
