@@ -1,6 +1,24 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    "usuario": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "guitarras": {
+      ".write": "root.child('admin').hasChild(auth.uid)",
+      ".read": "root.child('admin').hasChild(auth.uid)",
+      "normal": {
+        ".read": true
+      },
+      "vip": {
+        ".read": "root.child('vip').hasChild(auth.uid)"
+      }
+    },
+    "admin": {
+      ".read": "root.child('admin').hasChild(auth.uid)",
+      ".write": "root.child('admin').hasChild(auth.uid)"
+    }
   }
 }
