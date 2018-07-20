@@ -43,6 +43,7 @@ function nuevaGuitarra() {
     descripcion: descripcion.value,
     tipo: tipo.value,
     precio: precio.value,
+    img: img.value
   }
   // console.log(obj);
   if (obj.tipo == "normal") {
