@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     btnLogin.style.display = 'none';
     btnLogout.style.display = 'inline-block';
-  }else {
+  } else {
     btnLogin.style.display = 'inline-block';
     btnLogout.style.display = 'none';
   }
@@ -16,36 +16,36 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 btnLogin.addEventListener("click", function () {
   event.preventDefault();
-  var provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope('public_profile');
-  // var provider = new firebase.auth.GoogleAuthProvider();
-  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  // var provider = new firebase.auth.FacebookAuthProvider();
+  // provider.addScope('public_profile');
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-  firebase.auth().signInWithPopup(provider).then(function(datosusuario) {
-  btnLogout.innerHTML = "Cerrar sesión";
-  usuario = {
-    nombre: datosusuario.user.displayName,
-    email: datosusuario.user.email,
-    uid: datosusuario.user.uid
-  };
-  agregarUsuario(usuario, usuario.uid);
-  }).catch(function(error){
+  firebase.auth().signInWithPopup(provider).then(function (datosusuario) {
+    btnLogout.innerHTML = "Cerrar sesión";
+    usuario = {
+      nombre: datosusuario.user.displayName,
+      email: datosusuario.user.email,
+      uid: datosusuario.user.uid
+    };
+    agregarUsuario(usuario, usuario.uid);
+  }).catch(function (error) {
     console.log("error");
   });
 });
 
-btnLogout.addEventListener("click", function(){
-  firebase.auth().signOut().then(function() {
+btnLogout.addEventListener("click", function () {
+  firebase.auth().signOut().then(function () {
     // Sign-out successful.
     btnLogin.innerHTML = "Iniciar sesión";
     btnLogout.innerHTML = "";
 
-  }).catch(function(error) {
+  }).catch(function (error) {
     // An error happened.
     console.log(error);
   });
 });
 
-function agregarUsuario(usuario, uid){
+function agregarUsuario(usuario, uid) {
   ref.child(uid).update(usuario);
 }
