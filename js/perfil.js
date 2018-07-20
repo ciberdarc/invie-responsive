@@ -35,8 +35,8 @@ function llenarInformacion(nombre, email, telefono, direccion) {
   console.log(nombre, email, telefono);
   perfilNombre.innerHTML = nombre;
   perfilEmail.innerHTML = email;
-  perfilTelefono.innerHTML = telefono;
-  perfilDireccion.innerHTML = direccion.calle + " " +direccion.interior + ", " + direccion.colonia + " " +direccion.cp;
+  perfilTelefono.innerHTML = telefono || 'Agrega un telefono';
+  perfilDireccion.innerHTML = (direccion) ? `${direccion.calle}, ${direccion.interior}${direccion.colonia}${direccion.cp}` : 'Agrega una dirección';
 }
 
 //Para la seccion de uso de base de datos
@@ -99,8 +99,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     btnLogin.style.display = 'none';
     btnLogout.style.display = 'inline-block';
     leerInformacion(user.uid);
-  }else {
-    
+  } else {
+
     btnLogin.style.display = 'inline-block';
     btnLogout.style.display = 'none';
     window.location.href = "index.html";
@@ -118,7 +118,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 //   firebase.auth().signInWithPopup(provider).then(function(datosusuario) {
 //   btnLogout.innerHTML = "Cerrar sesión";
 //   console.log(datosusuario);
-  
+
 //   usuario = {
 //     nombre: datosusuario.user.displayName,
 //     email: datosusuario.user.email,
@@ -130,28 +130,28 @@ firebase.auth().onAuthStateChanged(function (user) {
 //   });
 // });
 
-btnLogout.addEventListener("click", function(){
-  firebase.auth().signOut().then(function() {
+btnLogout.addEventListener("click", function () {
+  firebase.auth().signOut().then(function () {
     // Sign-out successful.
     btnLogin.innerHTML = "Iniciar sesión";
     btnLogout.innerHTML = "";
 
-  }).catch(function(error) {
+  }).catch(function (error) {
     // An error happened.
     console.log(error);
   });
 });
 
-function agregarUsuario(usuario, uid){
+function agregarUsuario(usuario, uid) {
   ref.child(uid).update(usuario);
 }
 
-btnEditar.addEventListener("click", function() {
+btnEditar.addEventListener("click", function () {
   datosPerfil.style.display = 'none';
   formularioPerfil.style.display = 'block';
 });
 
-cancelForm.addEventListener("click", function() {
+cancelForm.addEventListener("click", function () {
   datosPerfil.style.display = 'block';
   formularioPerfil.style.display = 'none';
 });

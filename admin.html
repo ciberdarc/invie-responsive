@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Tu perfil</title>
+  <title>Admin</title>
   <meta charset="utf-8" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/invie.css" />
@@ -35,65 +35,21 @@
       </nav>
     </div>
   </header>
-  <!-- <button id="btnPush">push</button>
-    <button id="btnUpdate">update</button>
-    <button id="btnSet">set</button>
-    <button id="btnRemove">Remove</button> -->
-  <section class="tabla datosPerfil" id="datosPerfil">
-    <div class="contenedor">
-      <h1>Tu Perfil</h1>
-      <label for="perfilNombre">Nombre</label>
-      <h3 id="perfilNombre"></h3>
-      <label for="perfilEmail">Email</label>
-      <h3 id="perfilEmail"></h3>
-      <label for="perfilTelefono">Teléfono</label>
-      <h3 id="perfilTelefono"></h3>
-      <label for="perfilDireccion">Direccion</label>
-      <h3 id="perfilDireccion"></h3>
-      <button id="perfilEditar">Editar</button>
-    </div>
-  </section>
-  <section class="formularioPerfil" onsubmit="editarDatos()" id="formularioPerfil" style="display:none">
 
-    <div class="contenedor">
-      <h2>Edita tu información</h2>
-      <form action="" name="formPerfil">
-        <div>
-          <label for="nombreForm">Nombre:</label>
-          <input type="text" id="nombreForm" required>
-        </div>
-        <div>
-          <label for="emailForm">Email:</label>
-          <input type="text" id="emailForm" required>
-        </div>
-        <div>
-          <label for="telefonoForm">Teléfono:</label>
-          <input type="text" id="telefonoForm" required>
-        </div>
-        <div>
-          dirección
-        </div>
-        <div>
-          <label for="calleForm">calle:</label>
-          <input type="text" id="calleForm" required>
-        </div>
-        <div>
-          <label for="interiorForm">Num. Int.:</label>
-          <input type="text" id="interiorForm" required>
-        </div>
-        <div>
-          <label for="coloniaForm">colonia:</label>
-          <input type="text" id="coloniaForm" required>
-        </div>
-        <div>
-          <label for="cpForm">Código postal:</label>
-          <input type="text" id="cpForm" required>
-        </div>
-        <button type="button" id="cancelForm">cancelar</button>
-        <button type="submit">Guardar</button>
-      </form>
-    </div>
+  <section id="guitarras" class="contenedor">
+    chispitas
+    <h2>Nueva guitarra</h2>
+    <form action="" onsubmit="nuevaGuitarra()">
+      <input type="text" id="nombre" placeholder="Nombre" autocomplete="off">
+      <input type="text" id="descripcion" placeholder="descripcion">
+      <input type="text" id="tipo" placeholder="tipo">
+      <input type="text" id="precio" placeholder="precio">
+      <input type="text" id="img" placeholder="img">
+      <button type="submit">Agregar</button>
+    </form>
   </section>
+
+
   <footer class="footer">
     <div class="contenedor">
       <div class="contacto">
@@ -164,7 +120,7 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script type="text/javascript" src="js/perfil.js"></script>
+  <script type="text/javascript" src="js/admin.js"></script>
   <script type="text/javascript">
     var bLazy = new Blazy({
       selector: 'img'
