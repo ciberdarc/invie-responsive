@@ -24,10 +24,10 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 btnLogin.addEventListener("click", function () {
   event.preventDefault();
-  var provider = new firebase.auth.FacebookAuthProvider();
-  provider.addScope('public_profile');
-  // var provider = new firebase.auth.GoogleAuthProvider();
-  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  // var provider = new firebase.auth.FacebookAuthProvider();
+  // provider.addScope('public_profile');
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
   firebase.auth().signInWithPopup(provider).then(function (datosusuario) {
     btnLogout.innerHTML = "Cerrar sesión";
@@ -118,6 +118,31 @@ function crearElementoGuitarra(key, nombre, precio, descripcion, img) {
   })
   return guitarElement
 }
+
+// function IngresoGoogle() {
+//   if (!firebase.auth().currentUser) {
+//     var provider = new firebase.auth.GoogleAuthProvider();
+//     provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+//     firebase.auth().signInWithPopup(provider).then(function (result) {
+//       var token = result.credential.accesstoken
+//       var user = result.user
+//       var name = result.user.displayName
+
+//     }).catch(function (error) {
+//       var errorCode = error.code
+//       var errorMessage = error.message
+//       var errormail = error.mail
+//       var credential = error.credential
+//       if (errorCode === 'auth/account-exists-with-different-credential') {
+//         alert('Es el mismo usuario')
+//       }
+//     })
+//   } else {
+//     firebase.auth().signOut()
+//   }
+// }
+
+// document.getElementById('btn-google').addEventListener('click', IngresoGoogle, false)
 
 leerGuitarras()
 leerGuitarrasVip()
